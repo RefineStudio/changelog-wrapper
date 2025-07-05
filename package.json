@@ -1,0 +1,55 @@
+{
+  "name": "changelog-wrapper",
+  "version": "1.0.0",
+  "description": "A customizable React component for displaying changelogs, supporting modal and page displays, and light/dark themes.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "build": "tsup src/index.ts --format esm,cjs --dts"
+  },
+  "keywords": [
+    "react",
+    "changelog",
+    "component",
+    "ui",
+    "npm-package"
+  ],
+  "author": "Henrique",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@headlessui/react": "^2.2.4",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^18.3.0",
+    "@vitest/ui": "^1.6.0",
+    "autoprefixer": "^10.4.21",
+    "clsx": "^2.1.1",
+    "jsdom": "^24.1.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^1.6.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
