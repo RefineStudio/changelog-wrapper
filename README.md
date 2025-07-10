@@ -25,7 +25,7 @@ This package requires the following peer dependencies in your project:
 
 - React: ^19.0.0
 - React DOM: ^19.0.0
-- Tailwind CSS: ^3.0.0 or ^4.0.0
+- Tailwind CSS: ^4.0.0
 
 **Note**: This package has been updated to use React 19 and takes advantage of the latest React features for improved performance and developer experience.
 
@@ -34,7 +34,8 @@ This package requires the following peer dependencies in your project:
 Ensure your `tailwind.config.js` includes the following configuration to enable proper styling and theme switching:
 
 ```javascript
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@refinestudio/changelog-wrapper/dist/**/*.{js,mjs}",
@@ -46,6 +47,8 @@ module.exports = {
   plugins: [],
 };
 ```
+
+**Note**: Tailwind CSS v4 uses ES modules by default. If you're using a CommonJS setup, you can still use the traditional `module.exports` syntax, but ES modules are recommended for better compatibility.
 
 ## Usage
 
