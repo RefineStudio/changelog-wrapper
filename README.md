@@ -16,7 +16,7 @@ A React component designed for displaying changelogs in web applications. It off
 ## Installation
 
 ```bash
-npm install changelog-wrapper
+npm install @refinestudio/changelog-wrapper
 ```
 
 ## Requirements
