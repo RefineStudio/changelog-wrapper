@@ -1,7 +1,9 @@
-import { Dialog } from "@headlessui/react";
-import clsx from "clsx";
 import { useState } from "react";
 import { ChangelogEntry } from "../types";
+
+const clsx = (...classes: (string | boolean | undefined | null)[]): string => {
+  return classes.filter(Boolean).join(" ");
+};
 
 const formatDate = (dateString: string): string => {
   try {
@@ -119,44 +121,44 @@ export function Changelog({
   );
 
   if (display === "modal") {
+    if (!open) return null;
+
     return (
       <Wrapper>
-        <Dialog open={open} onClose={handleClose} className="relative z-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div
             className="fixed inset-0 bg-black/30 backdrop-blur-sm"
-            aria-hidden="true"
+            onClick={handleClose}
           />
-          <div className="fixed inset-0 flex items-center justify-center p-4">
-            <Dialog.Panel className="bg-white dark:bg-zinc-900 rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
-              <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-                <Dialog.Title className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Changelog
-                </Dialog.Title>
-                <button
-                  onClick={handleClose}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
+          <div className="relative bg-white dark:bg-zinc-900 rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                Changelog
+              </h2>
+              <button
+                onClick={handleClose}
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="flex-1 overflow-y-auto p-6">
-                <ChangelogContent entries={entries} />
-              </div>
-            </Dialog.Panel>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-6">
+              <ChangelogContent entries={entries} />
+            </div>
           </div>
-        </Dialog>
+        </div>
       </Wrapper>
     );
   }
@@ -165,7 +167,7 @@ export function Changelog({
     <Wrapper>
       <div className="max-w-4xl mx-auto p-6">
         <div className="space-y-6">
-          <div className="sticky top-0 bg-white dark:bg-zinc-900 pb-4 border-b border-gray-200 dark:border-gray-700 mb-6">
+          <div className="bg-white dark:bg-zinc-900 pb-4 border-b border-gray-200 dark:border-gray-700 mb-6">
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
               Changelog
             </h1>
