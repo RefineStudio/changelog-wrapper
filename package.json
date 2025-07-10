@@ -1,7 +1,7 @@
 {
-  "name": "changelog-wrapper",
+  "name": "@refinestudio/changelog-wrapper",
   "version": "1.0.0",
-  "description": "A customizable React component for displaying changelogs, supporting modal and page displays, and light/dark themes.",
+  "description": "A customizable React component for displaying changelogs.",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/types/index.d.ts",
@@ -19,7 +19,7 @@
     "ui",
     "npm-package"
   ],
-  "author": "Henrique",
+  "author": "Refine Studio",
   "license": "MIT",
   "type": "module",
   "dependencies": {
@@ -30,7 +30,7 @@
     "@headlessui/react": "^2.2.4",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
-    "@types/react": "^19.1.8",
+    "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "@vitest/ui": "^1.6.0",
     "autoprefixer": "^10.4.21",

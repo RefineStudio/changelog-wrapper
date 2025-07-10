@@ -47,6 +47,15 @@ const ChangelogContent = ({ entries }: ChangelogContentProps) => (
             <div className="prose prose-sm dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed">
               {entry.content}
             </div>
+            {entry.image && (
+              <div className="mb-4">
+                <img
+                  src={entry.image}
+                  alt={entry.title}
+                  className="w-full max-w-lg rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
+                />
+              </div>
+            )}
             {entry.tags && entry.tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-4">
                 {entry.tags.map((tag) => (

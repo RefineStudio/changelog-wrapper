@@ -4,4 +4,5 @@ export interface ChangelogEntry {
   date: string;
   content: string;
   tags?: string[];
+  image?: string;
 }

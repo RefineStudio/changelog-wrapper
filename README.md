@@ -9,6 +9,7 @@ A React component designed for displaying changelogs in web applications. It off
 - Display Modes: Can be rendered as a full page or a modal dialog.
 - Date Formatting: Automatically formats dates for improved readability.
 - Tag Support: Allows categorization of updates with custom tags.
+- Image Support: Display images with changelog entries for better visual communication.
 - Accessibility: Built with accessibility best practices.
 - TypeScript: Provides full TypeScript support with type definitions.
 
@@ -60,6 +61,7 @@ const entries = [
     content:
       "We added the ability to export data in multiple formats, including CSV, JSON, and PDF.",
     tags: ["Feature", "Export"],
+    image: "https://example.com/images/export-feature.jpg",
   },
   {
     id: "2",
@@ -68,6 +70,7 @@ const entries = [
     content:
       "We optimized application loading, resulting in a 40% improvement in startup speed.",
     tags: ["Performance", "Optimization"],
+    image: "https://example.com/images/performance-chart.png",
   },
 ];
 
@@ -154,6 +157,7 @@ interface ChangelogEntry {
   date: string; // Date in ISO format (YYYY-MM-DD) or any valid date string.
   content: string; // Main content or description of the changes.
   tags?: string[]; // Optional array of tags for categorization.
+  image?: string; // Optional image URL to display with the changelog entry.
 }
 ```
 
