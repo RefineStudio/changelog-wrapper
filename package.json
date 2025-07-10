@@ -1,6 +1,6 @@
 {
   "name": "@refinestudio/changelog-wrapper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A customizable React component for displaying changelogs.",
   "main": "dist/index.js",
   "module": "dist/index.js",
