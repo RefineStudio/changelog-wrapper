@@ -23,9 +23,11 @@ npm install @refinestudio/changelog-wrapper
 
 This package requires the following peer dependencies in your project:
 
-- React: ^18.0.0 or ^19.0.0
-- React DOM: ^18.0.0 or ^19.0.0
+- React: ^19.0.0
+- React DOM: ^19.0.0
 - Tailwind CSS: ^3.0.0 or ^4.0.0
+
+**Note**: This package has been updated to use React 19 and takes advantage of the latest React features for improved performance and developer experience.
 
 ### Required Tailwind CSS Configuration
 
@@ -35,7 +37,7 @@ Ensure your `tailwind.config.js` includes the following configuration to enable 
 module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/changelog-wrapper/dist/**/*.{js,mjs}",
+    "./node_modules/@refinestudio/changelog-wrapper/dist/**/*.{js,mjs}",
   ],
   darkMode: "class", // Essential for theme switching
   theme: {
@@ -51,7 +53,7 @@ module.exports = {
 
 ```jsx
 import React from "react";
-import { Changelog } from "changelog-wrapper";
+import { Changelog } from "@refinestudio/changelog-wrapper";
 
 const entries = [
   {
@@ -83,7 +85,7 @@ function App() {
 
 ```jsx
 import React, { useState } from "react";
-import { Changelog } from "changelog-wrapper";
+import { Changelog } from "@refinestudio/changelog-wrapper";
 
 function App() {
   const [showChangelog, setShowChangelog] = useState(false);
@@ -110,7 +112,7 @@ function App() {
 
 ```jsx
 import React, { useState } from "react";
-import { Changelog } from "changelog-wrapper";
+import { Changelog } from "@refinestudio/changelog-wrapper";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
