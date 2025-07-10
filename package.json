@@ -2,15 +2,19 @@
   "name": "@refinestudio/changelog-wrapper",
   "version": "1.0.2",
   "description": "A customizable React component for displaying changelogs.",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/types/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepare": "npm run clean && npm run build",
     "test": "vitest",
-    "build": "tsup index.ts --format esm,cjs --dts"
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "keywords": [
     "react",
@@ -21,10 +25,9 @@
   ],
   "author": "Refine Studio",
   "license": "MIT",
-  "type": "module",
-  "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@headlessui/react": "^2.2.4",
@@ -37,19 +40,17 @@
     "clsx": "^2.1.1",
     "jsdom": "^24.1.0",
     "postcss": "^8.5.6",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "tailwindcss": "^4.1.11",
-    "tsup": "^8.5.0",
     "typescript": "^5.8.3",
     "vitest": "^1.6.0"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/refinestudio/changelog-wrapper"
   },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+  "publishConfig": {
+    "access": "public"
   }
 }

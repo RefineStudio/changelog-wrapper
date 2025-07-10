@@ -60,3 +60,7 @@ yarn.lock
 
 # pnpm lock file
 pnpm-lock.yaml
+
+#example
+example/
+
