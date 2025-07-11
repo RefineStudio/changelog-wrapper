@@ -25,9 +25,11 @@ This package requires the following peer dependencies in your project:
 
 - React: ^19.0.0
 - React DOM: ^19.0.0
-- Tailwind CSS: ^4.0.0
+- Tailwind CSS: ^3.3.3
 
 **Note**: This package has been updated to use React 19 and takes advantage of the latest React features for improved performance and developer experience.
+
+**Important**: This package is compatible with Tailwind CSS v3.3.3. If you're using Tailwind v4, please downgrade to v3.3.3 for proper compatibility.
 
 ### Required Tailwind CSS Configuration
 
@@ -48,7 +50,34 @@ export default {
 };
 ```
 
-**Note**: Tailwind CSS v4 uses ES modules by default. If you're using a CommonJS setup, you can still use the traditional `module.exports` syntax, but ES modules are recommended for better compatibility.
+### PostCSS Configuration
+
+Make sure your `postcss.config.js` includes Tailwind CSS:
+
+```javascript
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+### CSS Import
+
+Add Tailwind directives to your main CSS file:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+**Note**: This package is designed for Tailwind CSS v3.3.3. Make sure you're using the correct version by running:
+
+```bash
+npm install tailwindcss@^3.3.3
+```
 
 ## Usage
 
